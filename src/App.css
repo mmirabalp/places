@@ -23,6 +23,38 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Header-background {
+  padding: 50px;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.Header-ilustration{
+  position: absolute;
+  z-index: 0;
+  top: -120px;
+  height: 400px;
+
+}
+
+.Header-Main {
+margin-bottom: 2em;
+margin-left: -200px;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
 }
