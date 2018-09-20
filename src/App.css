@@ -67,12 +67,15 @@
 }
 
 .Header-Benefit-image img {
-  max-width: 80%;
+  max-width: 100%;
+}
+.pictures{
+  height: 260px;
 }
 
 .Header-Benefit-content{
   flex-basis: 40%;
-  max-width: 40%;
+  max-width: 60%;
   padding-top: 10px !important;
   padding-right: 10px !important;
   padding-bottom: 10px !important;
@@ -84,7 +87,7 @@
   z-index: -1;
   top: 20px;
   /* top: -120px; */
-  height: 265px;
+  height: 230px;
 }
 
 .Header-Main {
