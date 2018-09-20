@@ -64,6 +64,8 @@
   -ms-flex: 0 0 auto;
   padding-right: .5rem;
   padding-left: .5rem;
+      height: 155px;
+      max-width: 155px;
 }
 
 .Header-Benefit-image img {
