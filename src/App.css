@@ -64,18 +64,20 @@
   -ms-flex: 0 0 auto;
   padding-right: .5rem;
   padding-left: .5rem;
-      height: 155px;
-      max-width: 155px;
+  height: 155px;
+  max-width: 155px;
 }
 
 .Header-Benefit-image img {
   max-width: 100%;
+  width: 80px;
 }
-.pictures{
+
+.pictures {
   height: 260px;
 }
 
-.Header-Benefit-content{
+.Header-Benefit-content {
   flex-basis: 40%;
   max-width: 60%;
   padding-top: 10px !important;
