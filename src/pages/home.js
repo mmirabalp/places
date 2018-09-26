@@ -1,27 +1,33 @@
 import React from 'react';
-import {Card, CardText, CardMedia, CardTitle} from 'material-ui/Card';
+
 import {indigo400} from 'material-ui/styles/colors';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import Title from '../components/Title';
 import Benefit from '../components/Benefits';
+import PlaceCard from '../components/places/PlaceCard';
 import data from '../request/Places';
+import TransitionGroup from 'react-transition-group/TransitionGroup';
 
 export default class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      places: []
+    }
+setTimeout(()=>this.setState({places: data.places}),2000)
+    this.hidePlace = this.hidePlace.bind(this);
+  }
 
   places() {
-    return data.places.map((place, index) => {
-      return (<div className="col-xs-12 col-sm-4" key={index}>
-        <Card>
-          <CardMedia>
-            <img className="pictures" alt={this.props} src={process.env.PUBLIC_URL + place.imageUrl}/>
-          </CardMedia>
-          <CardTitle title={place.title}></CardTitle>
-          <CardText>
-            {place.description}
-          </CardText>
-        </Card>
-      </div>);
+    return this.state.places.map((place, index) => {
+      return (<PlaceCard onRemove={this.hidePlace} place={place} key={index}/>);
+    })
+  }
+
+  hidePlace(place) {
+    this.setState({
+      places: this.state.places.filter(element => element !== place)
     })
   }
 
@@ -34,13 +40,16 @@ export default class Home extends React.Component {
           }}>
           <div className="Header-Main">
             <Title></Title>
+
             <RaisedButton label="Create free account" secondary={true}/>
-            <img alt="images" className="Header-ilustration" src={process.env.PUBLIC_URL + '/images/globe-map-icon.png'} height="300px"/>
+            <img alt="" className="Header-ilustration" src={process.env.PUBLIC_URL + '/images/globe-map-icon.png'} height="300px"/>
+
           </div>
           <div className="">
             <Benefit></Benefit>
           </div>
         </div>
+
       </div>
       <div style={{
           'backgroundColor' : indigo400,
@@ -51,10 +60,12 @@ export default class Home extends React.Component {
             color: 'white'
           }}>
           Popular Sites</h3>
-        <div className="row">
+        <TransitionGroup className="row">
           {this.places()}
-        </div>
+        </TransitionGroup>
       </div>
     </section>);
+
   }
+
 }
