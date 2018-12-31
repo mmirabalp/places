@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import {indigo400} from 'material-ui/styles/colors';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import Title from '../components/Title';
+import Container from '../components/Container'
 import Benefit from '../components/Benefits';
 import PlaceCard from '../components/places/PlaceCard';
 import data from '../request/Places';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
+
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -15,7 +17,7 @@ export default class Home extends React.Component {
     this.state = {
       places: []
     }
-setTimeout(()=>this.setState({places: data.places}),2000)
+    setTimeout(() => this.setState({places: data.places}), 2000)
     this.hidePlace = this.hidePlace.bind(this);
   }
 
@@ -34,10 +36,7 @@ setTimeout(()=>this.setState({places: data.places}),2000)
   render() {
     return (<section>
       <div className="Header-background">
-        <div style={{
-            "width" : "80%",
-            "margin" : "0 auto"
-          }}>
+      <Container>
           <div className="Header-Main">
             <Title></Title>
 
@@ -48,9 +47,10 @@ setTimeout(()=>this.setState({places: data.places}),2000)
           <div className="">
             <Benefit></Benefit>
           </div>
+          </Container>
         </div>
 
-      </div>
+      
       <div style={{
           'backgroundColor' : indigo400,
           'padding' : '50px'
@@ -64,6 +64,7 @@ setTimeout(()=>this.setState({places: data.places}),2000)
           {this.places()}
         </TransitionGroup>
       </div>
+      
     </section>);
 
   }
