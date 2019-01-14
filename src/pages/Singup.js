@@ -7,11 +7,11 @@ import { Link } from 'react-router-dom'
 
 
 
-export default class Login extends React.Component{
+export default class Singup extends React.Component{
   render(){
 
     return(
-     <div className="Login-background" style={{'backgroundImage': "url("+process.env.PUBLIC_URL + '/images/login-background-8.jpeg'+")"}}>  
+     <div className="Login-background" style={{'backgroundImage': "url("+process.env.PUBLIC_URL + '/images/login-background-9.jpeg'+")"}}>  
       <div className="row col-xl-12">
          <div className="col-xl-6 panel">
           
@@ -28,9 +28,9 @@ export default class Login extends React.Component{
                  type="password"
                />
                <div className="Login-actions">
-                 <Link to="/singup" style={{marginRight:"1em", color:"white"}}>Create New Account</Link>
+                 <Link to="/login" style={{marginRight:"1em", color:"white"}}>Allready have Account</Link>
                  <RaisedButton
-                   label="LogIn"
+                   label="Sign Up"
                    secondary={true}
                  />
                </div>
